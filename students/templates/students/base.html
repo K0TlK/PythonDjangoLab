@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Студенты Сибстрин</title>
+    <a href="{% url 'index' %}">
+        <img src="{% static 'students/img/1.jpg' %}" alt="Logo" width="10%">
+    </a>
+    <menu>
+        <ul>
+            <li><a href="{% url 'index' %}">Главная</a></li>
+            <li><a href="{% url 'info' %}">Инфо</a></li>
+        </ul>
+    </menu>
+</head>
+<body>
+{% block b1 %} {% endblock %}
+</body>
+<footer>Сибстрин самый лучший вуз!!!</footer>
+</html>
