@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Оптовый интернет-магазин консервов{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <!-- Дополнительные скрипты и стили -->
+    {% block extrahead %}
+    {% endblock %}
+</head>
+<body>
+    <header>
+        <h1><a href="{% url 'home' %}">Оптовый интернет-магазин консервов</a></h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'home' %}">Главная</a></li>
+                <li><a href="{% url 'add-supply' %}">Добавить поставку</a></li>
+                <li><a href="{% url 'supply-list' %}">Список поставок</a></li>
+                <li><a href="{% url 'contact' %}">Контакты</a></li>
+                <li><a href="{% url 'export-csv' %}">Экспорт в CSV</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}
+        <!-- Здесь будет содержимое каждой страницы -->
+        {% endblock content %}
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Оптовый интернет-магазин консервов</p>
+    </footer>
+
+    {% block extrajs %}
+    {% endblock %}
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>
