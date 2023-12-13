@@ -10,21 +10,4 @@
         <p><strong>Телефон:</strong> +7 (123) 456-78-90</p>
         <p><strong>Email:</strong> info@example.com</p>
     </section>
-
-    <section>
-        <h3>Форма обратной связи</h3>
-        <form method="post" novalidate>
-            {% csrf_token %}
-            {{ form.as_p }}
-            <button type="submit" class="btn btn-primary">Отправить</button>
-        </form>
-
-        {% if messages %}
-        <ul class="messages">
-            {% for message in messages %}
-            <li>{% if message.tags %} class="{{ message.tags }}"{% endif %}}>{{ message }}</li>
-            {% endfor %}
-        </ul>
-        {% endif %}
-    </section>
 {% endblock %}
