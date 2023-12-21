@@ -6,35 +6,40 @@
     <title>{% block title %}Оптовый интернет-магазин консервов{% endblock %}</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     {% block extrahead %}
     {% endblock %}
 </head>
 <body>
-    <header>
-        <h1><a href="{% url 'home' %}">Оптовый интернет-магазин консервов</a></h1>
-        <nav>
-            <ul>
-                <li><a href="{% url 'home' %}">Главная</a></li>
-                <li><a href="{% url 'add-supply' %}">Добавить поставку</a></li>
-                <li><a href="{% url 'supply-list' %}">Список поставок</a></li>
-                <li><a href="{% url 'contact' %}">Контакты</a></li>
-                <li><a href="{% url 'export-csv' %}">Экспорт в CSV</a></li>
-            </ul>
-        </nav>
+    <header class="bg-primary text-white text-center py-3">
+        <h1><a href="{% url 'home' %}" class="text-white">Оптовый интернет-магазин консервов</a></h1>
     </header>
 
-    <main>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item"><a href="{% url 'home' %}" class="nav-link">Главная</a></li>
+                <li class="nav-item"><a href="{% url 'add-supply' %}" class="nav-link">Добавить поставку</a></li>
+                <li class="nav-item"><a href="{% url 'supply-list' %}" class="nav-link">Список поставок</a></li>
+                <li class="nav-item"><a href="{% url 'contact' %}" class="nav-link">Контакты</a></li>
+                <li class="nav-item"><a href="{% url 'export-csv' %}" class="nav-link">Экспорт в CSV</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container my-4">
         {% block content %}
         <!-- Здесь будет содержимое каждой страницы -->
         {% endblock content %}
     </main>
 
-    <footer>
+    <footer class="bg-dark text-white text-center py-3">
         <p>&copy; 2023 Оптовый интернет-магазин консервов</p>
     </footer>
 
     {% block extrajs %}
     {% endblock %}
     <script src="{% static 'js/main.js' %}"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </body>
 </html>
